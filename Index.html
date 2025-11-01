@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ankush Gautam Restuarant</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ===== RESET & BASE STYLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f8f8f8;
+    }
+
+    /* ===== NAVBAR STYLES ===== */
+    nav {
+      width: 100%;
+      background-color: #2c3e50;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #e67e22;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #e67e22;
+    }
+
+    /* ===== HAMBURGER MENU ===== */
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-btn div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: -100%;
+        flex-direction: column;
+        background-color: #34495e;
+        width: 200px;
+        padding: 20px;
+        border-radius: 5px;
+        transition: right 0.3s ease;
+      }
+
+      .nav-links.active {
+        right: 20px;
+      }
+
+      .menu-btn {
+        display: flex;
+      }
+    }
+
+    /* ===== ANIMATION FOR TOGGLE ===== */
+    .menu-btn.toggle .bar1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-btn.toggle .bar2 {
+      opacity: 0;
+    }
+
+    .menu-btn.toggle .bar3 {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+      * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      width: 100%;
+      background-color: #2c3e50;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #e67e22;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #e67e22;
+    }
+
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-btn div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: -100%;
+        flex-direction: column;
+        background-color: #34495e;
+        width: 200px;
+        padding: 20px;
+        border-radius: 5px;
+        transition: right 0.3s ease;
+      }
+
+      .nav-links.active {
+        right: 20px;
+      }
+
+      .menu-btn {
+        display: flex;
+      }
+    }
+
+    .menu-btn.toggle .bar1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-btn.toggle .bar2 {
+      opacity: 0;
+    }
+
+    .menu-btn.toggle .bar3 {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      height: 100vh;
+      width: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80')
+        center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      color: #f5f5f5;
+    }
+
+    .hero button {
+      background-color: #e67e22;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .hero button a{
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    .hero button:hover {
+      background-color: #d35400;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== RESPONSIVE TEXT ===== */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+    /* ===== MENU SECTION ===== */
+.menu-section {
+  padding: 80px 40px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 50px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.food-card {
+  background: #fdfdfd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.food-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.food-info {
+  padding: 20px;
+}
+
+.food-info h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.food-info p {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+.price {
+  display: block;
+  font-weight: 600;
+  color: #e67e22;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.order-btn {
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.order-btn:hover {
+  background: #d35400;
+}
+/* ===== FOREIGN FOOD SECTION ===== */
+.foreign-menu-section {
+  padding: 80px 40px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.foreign-menu-section .section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.foreign-menu-section .section-subtitle {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 50px;
+}
+
+.foreign-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.food-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.food-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.food-info {
+  padding: 20px;
+}
+
+.food-info h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.food-info p {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+.price {
+  display: block;
+  font-weight: 600;
+  color: #e67e22;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.order-btn {
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.order-btn:hover {
+  background: #d35400;
+}
+
+/* Responsive padding adjustment */
+@media (max-width: 768px) {
+  .foreign-menu-section {
+    padding: 60px 20px;
+  }
+}
+/* ===== FOOTER SECTION ===== */
+.footer {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 70px 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-about h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.footer-about span {
+  color: #e67e22;
+}
+
+.footer-about p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #fff;
+  position: relative;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #e67e22;
+}
+
+.footer-contact p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.footer-socials {
+  margin-top: 15px;
+}
+
+.social-icon {
+  display: inline-block;
+  background: #e67e22;
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 34px;
+  margin-right: 8px;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+  background: #d35400;
+  transform: translateY(-3px);
+}
+
+/* Bottom Footer */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 20px 20px;
+  }
+  .footer-container {
+    gap: 25px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  
+ <!-- ===== NAVBAR ===== -->
+  <nav>
+    <div class="logo">Ankush Gautam <span>Restuarant</span></div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="Index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallary.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="menu-btn" id="menuBtn">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Ankush Gautam Restuarant</h1>
+      <p>Experience the finest flavors crafted with passion and tradition.</p>
+      <button id="bookTableBtn"><a href="menu.html"> Book a Table</a></button>
+    </div>
+  </section>
+
+  <!-- ===== FOOD MENU SECTION ===== -->
+<section class="menu-section" id="menu">
+  <h2 class="section-title">Our Signature Dishes</h2>
+  <p class="section-subtitle">Discover the taste of perfection — handcrafted with love and flavor.</p>
+
+  <div class="menu-grid">
+    <!-- CARD 1 -->
+    <div class="food-card">
+      <img src="chicken.jpg" alt="Grilled Chicken" />
+      <div class="food-info">
+        <h3>Grilled Chicken</h3>
+        <p>Juicy grilled chicken seasoned with herbs and spices.</p>
+        <span class="price">₹450</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="food-card">
+      <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=600&q=80" alt="Pasta Alfredo" />
+      <div class="food-info">
+        <h3>Pasta Alfredo</h3>
+        <p>Creamy Alfredo pasta with parmesan and garlic sauce.</p>
+        <span class="price">₹350</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="food-card">
+      <img src="paneer.png" alt="Paneer Tikka" />
+      <div class="food-info">
+        <h3>Paneer Tikka</h3>
+        <p>Smoky, spicy paneer tikka grilled to perfection.</p>
+        <span class="price">₹300</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="food-card">
+      <img src="cheeze.jpg" alt="Cheese Burger" />
+      <div class="food-info">
+        <h3>Cheese Burger</h3>
+        <p>Loaded with cheese, lettuce, and our secret sauce.</p>
+        <span class="price">₹280</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="food-card">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Greek Salad" />
+      <div class="food-info">
+        <h3>Greek Salad</h3>
+        <p>Fresh vegetables tossed with feta cheese and olive oil.</p>
+        <span class="price">₹250</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="food-card">
+      <img src="sushi.jpg" alt="Sushi Platter" />
+      <div class="food-info">
+        <h3>Sushi Platter</h3>
+        <p>Assorted sushi rolls crafted with premium ingredients.</p>
+        <span class="price">₹700</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="food-card">
+      <img src="mutton.jpg" alt="Mutton Biryani" />
+      <div class="food-info">
+        <h3>Mutton Biryani</h3>
+        <p>Rich aromatic rice with tender spiced mutton pieces.</p>
+        <span class="price">₹550</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="food-card">
+      <img src="pizza.jpg" alt="Pizza Margherita" />
+      <div class="food-info">
+        <h3>Pizza Margherita</h3>
+        <p>Classic pizza topped with mozzarella, basil & tomato.</p>
+        <span class="price">₹400</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="food-card">
+      <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=600&q=80" alt="Chocolate Cake" />
+      <div class="food-info">
+        <h3>Chocolate Cake</h3>
+        <p>Rich, moist chocolate cake with creamy frosting.</p>
+        <span class="price">₹220</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 10 -->
+    <div class="food-card">
+      <img src="fruit.jpg" alt="Fruit Smoothie" />
+      <div class="food-info">
+        <h3>Fruit Smoothie</h3>
+        <p>Fresh blended fruits for a refreshing, healthy treat.</p>
+        <span class="price">₹180</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== FOREIGN FOOD SECTION ===== -->
+<section class="foreign-menu-section" id="foreign-menu">
+  <h2 class="section-title">Our Foreign Cuisine Specials</h2>
+  <p class="section-subtitle">Taste the world on your plate — international dishes crafted with perfection.</p>
+
+  <div class="foreign-menu-grid">
+    <!-- CARD 1 -->
+    <div class="food-card">
+      <img src="Japanese sushi.jpg" alt="Japanese Sushi" />
+      <div class="food-info">
+        <h3>Japanese Sushi</h3>
+        <p>Traditional sushi rolls with fresh fish and seasoned rice.</p>
+        <span class="price">₹950</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="food-card">
+      <img src="italian pizza.jpg" alt="Italian Pizza" />
+      <div class="food-info">
+        <h3>Italian Pizza</h3>
+        <p>Authentic wood-fired pizza with tomato, basil & mozzarella.</p>
+        <span class="price">₹750</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="food-card">
+      <img src="french.jpg" alt="French Croissant" />
+      <div class="food-info">
+        <h3>French Croissant</h3>
+        <p>Flaky buttery pastry straight from the streets of Paris.</p>
+        <span class="price">₹220</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="food-card">
+      <img src="maxican.jpg" alt="Mexican Tacos" />
+      <div class="food-info">
+        <h3>Mexican Tacos</h3>
+        <p>Soft tortillas filled with spiced meat, veggies, and salsa.</p>
+        <span class="price">₹480</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="food-card">
+      <img src="american.jpg" alt="American Burger" />
+      <div class="food-info">
+        <h3>American Burger</h3>
+        <p>Juicy beef patty layered with cheese, lettuce, and sauces.</p>
+        <span class="price">₹560</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="food-card">
+      <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=600&q=80" alt="Belgian Waffles" />
+      <div class="food-info">
+        <h3>Belgian Waffles</h3>
+        <p>Golden crispy waffles topped with syrup and berries.</p>
+        <span class="price">₹320</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="food-card">
+      <img src="spanish.webp" alt="Spanish Paella" />
+      <div class="food-info">
+        <h3>Spanish Paella</h3>
+        <p>Traditional saffron rice dish with seafood and chicken.</p>
+        <span class="price">₹890</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="food-card">
+      <img src="thai.jpg" alt="Thai Green Curry" />
+      <div class="food-info">
+        <h3>Thai Green Curry</h3>
+        <p>Coconut-based curry with vegetables and exotic spices.</p>
+        <span class="price">₹640</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="food-card">
+      <img src="sushi.jpg" alt="Turkish Kebab" />
+      <div class="food-info">
+        <h3>Turkish Kebab</h3>
+        <p>Chargrilled lamb kebabs served with pita and hummus.</p>
+        <span class="price">₹720</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 10 -->
+    <div class="food-card">
+      <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=600&q=80" alt="Chinese Dumplings" />
+      <div class="food-info">
+        <h3>Chinese Dumplings</h3>
+        <p>Soft steamed dumplings filled with vegetables and pork.</p>
+        <span class="price">₹400</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== FOOTER SECTION ===== -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Footer Column 1 -->
+    <div class="footer-about">
+      <h3>Ankush Gautam <span>Restaurant</span></h3>
+      <p>
+        Experience world-class dining with traditional and international flavors
+        crafted by our expert chefs.
+      </p>
+    </div>
+
+    <!-- Footer Column 2 -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="Index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallary.html">Gallary</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Footer Column 3 -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📍 Front of Bidhanu Bajar 209214, Kanpur, Uttar Pradesh</p>
+      <p>📞 +91 9335435541</p>
+      <p>✉️ rg936073@gmail.com</p>
+
+      <div class="footer-socials">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p> Ankush Gautam Restaurant Kathui| All Rights Reserved.</p>
+  </div>
+</footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuBtn.classList.toggle('toggle');
+    });
+     // Toggle Mobile Menu
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuBtn.classList.toggle("toggle");
+    });
+
+    // Smooth scroll when clicking "Book a Table"
+    const bookBtn = document.getElementById("bookTableBtn");
+    bookBtn.addEventListener("click", () => {
+      alert("Table booking feature coming soon!");
+    });
+    // Simple order button click alert
+document.querySelectorAll(".order-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert("Thank you for your interest! Online ordering coming soon 🍽️");
+  });
+});
+// Order Now Button Clicks
+document.querySelectorAll(".foreign-menu-section .order-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert("Online ordering for this foreign dish coming soon 🌍🍴");
+  });
+});
+// Footer smooth scroll for Quick Links
+document.querySelectorAll(".footer-links a").forEach(link => {
+  link.addEventListener("click", e => {
+    const target = document.querySelector(link.getAttribute("href"));
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({
+        top: target.offsetTop - 70,
+        behavior: "smooth"
+      });
+    }
+  });
+});
+
+  </script>
+</body>
+</html>
